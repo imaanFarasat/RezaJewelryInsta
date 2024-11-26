@@ -24,7 +24,7 @@ const upload = multer({ storage: storage });
 
 // Initialize Express app
 const app = express();
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 3000;
 
 // Middleware to parse JSON bodies and serve static files
 app.use(express.json());
@@ -76,8 +76,8 @@ async function addWatermarkAndSave(imageBuffer, watermarkText) {
   }
 }
 
-// Serve the index.html page for file upload form
-app.get('/', (req, res) => {
+// Serve the index.html page for file upload form at /reza path
+app.get('/reza', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
